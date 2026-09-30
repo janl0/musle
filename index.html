@@ -38,12 +38,25 @@
         </section>
 
         <div class="controls">
-            <input type="text" id="currentGuess" class="currentGuess" placeholder="Search for the song title" autocomplete="off">
+            <input type="text" id="currentGuess" class="currentGuess" placeholder="Search for the song title" autocomplete="off" list="songOptions">
+            <datalist id="songOptions"></datalist>
             <div class="buttons">
                 <button id="skipBtn" class="btn btn-skip">Skip</button>
                 <button id="submitBtn" class="btn btn-submit">Guess</button>
             </div>
         </div>
+
+        <div id="statusBox" class="status" role="status" hidden>
+            <p id="status"></p>
+            <button id="nextBtn" class="btn btn-next" hidden>Next song</button>
+        </div>
+
+        <section class="songs">
+            <h2 class="songs-title">This round</h2>
+            <ol id="songList" class="song-list"></ol>
+        </section>
     </main>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -175,3 +175,48 @@ body {
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
 }
+
+.status {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    text-align: center;
+    background: var(--color-bg-radial-center);
+}
+.status.win  { border: 1px solid var(--color-tile-green-dim); }
+.status.lose { border: 1px solid var(--color-tile-red); }
+.currentGuess:disabled, .btn:disabled, .play:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.status p { margin: 0; }
+.status[hidden], .status p[hidden], .btn[hidden] { display: none; }
+.btn-next { height: 40px; background: var(--color-tile-blue-dim); color: var(--color-bg-dark); }
+
+.songs-title { margin: 0 0 10px; font-size: 1rem; font-weight: 600; color: var(--color-text-muted); }
+.song-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+
+.song-item {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    font: inherit;
+    color: var(--color-text-muted);
+    background: var(--color-bg-radial-center);
+    border: 1px solid transparent;
+    border-left: 4px solid var(--color-bg-radial-center);
+    border-radius: 12px;
+    cursor: pointer;
+}
+.song-item:hover { filter: brightness(1.1); }
+.song-item:focus-visible { outline: 2px solid var(--color-text-primary); outline-offset: 2px; }
+.song-item .num { font-weight: 700; }
+.song-item .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-text-primary); }
+.song-item.active { border-color: var(--color-tile-blue-dim); border-left-color: var(--color-tile-blue-dim); }
+.song-item.won  { border-left-color: var(--color-tile-green-dim); }
+.song-item.lost { border-left-color: var(--color-tile-red); }
